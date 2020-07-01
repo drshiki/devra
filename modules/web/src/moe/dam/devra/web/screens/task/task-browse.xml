@@ -25,6 +25,7 @@
             <properties include=".*"/>
         </filter>
         <table id="tasksTable"
+               textSelectionEnabled="true"
                width="100%"
                dataContainer="tasksDc">
             <actions>
