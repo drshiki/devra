@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://editorCaption"
+        focusComponent="form"
+        messagesPack="moe.dam.devra.web.screens.task">
+    <data>
+        <instance id="taskDc"
+                  class="moe.dam.devra.entity.Task"
+                  view="_local">
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="AUTO"
+                width="AUTO" forceDialog="true"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="taskDc">
+            <column width="250px">
+                <textField id="nameField" property="name" required="true"/>
+                <textArea id="descField" property="desc" rows="5"/>
+                <textField id="jiraLinkField" property="jiraLink"/>
+                <textField id="jiraTaskNumberField" property="jiraTaskNumber"/>
+                <lookupField id="typeField" property="type" required="true"/>
+                <lookupField id="statusField" property="status" required="true"/>
+                <textField id="testerField" property="tester"/>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button action="windowCommitAndClose"/>
+            <button action="windowClose"/>
+        </hbox>
+    </layout>
+</window>
