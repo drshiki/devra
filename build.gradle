@@ -171,3 +171,18 @@ task restart(dependsOn: ['stop', ":${modulePrefix}-core:deploy", ":${modulePrefi
 }
 restart.finalizedBy start
 
+task buildWar(type: CubaWarBuilding) {
+    includeJdbcDriver = true
+    appProperties = ['cuba.automaticDatabaseUpdate'    : true,
+                     'cuba.dataSource.jdbcUrl'         : 'jdbc:mariadb://mariadb-server/devra?useSSL=false&allowMultiQueries=true&serverTimezone=UTC',
+                     'cuba.dataSource.username'        : 'root',
+                     'cuba.dataSource.password'        : '123456',
+                     'cuba.dataSource.dbName'          : 'devra',
+                     'cuba.dataSource.host'            : 'mariadb-server',
+                     'cuba.dataSource.port'            : '',
+                     'cuba.dataSource.connectionParams': '?useSSL=false&allowMultiQueries=true&serverTimezone=UTC',
+                     'cuba.dataSource.driverClassName' : 'org.mariadb.jdbc.Driver',
+                     'cuba.dataSourceProvider'         : 'application']
+    webXmlPath = 'modules/web/web/WEB-INF/single-war-web.xml'
+    logbackConfigurationFile = 'etc/war-logback.xml'
+}
