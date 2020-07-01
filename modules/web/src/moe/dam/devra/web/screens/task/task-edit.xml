@@ -20,7 +20,7 @@
                 <textField id="jiraLinkField" property="jiraLink"/>
                 <textField id="jiraTaskNumberField" property="jiraTaskNumber"/>
                 <lookupField id="typeField" property="type" required="true"/>
-                <lookupField id="statusField" property="status" required="true"/>
+                <lookupField id="statusField" property="status"/>
                 <textField id="testerField" property="tester"/>
             </column>
         </form>
