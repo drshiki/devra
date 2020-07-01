@@ -35,6 +35,7 @@ cuba {
 dependencies {
     appComponent("com.haulmont.cuba:cuba-global:$cubaVersion")
     appComponent('cn.cuba.trans:transcn-global:7.2.0')
+    appComponent('com.haulmont.addon.helium:helium-global:0.2.0')
 }
 
 def maria = 'org.mariadb.jdbc:mariadb-java-client:2.4.1'
